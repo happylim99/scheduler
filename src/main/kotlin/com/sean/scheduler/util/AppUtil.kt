@@ -1,5 +1,6 @@
 package com.sean.scheduler.util
 
+import com.sean.scheduler.service.MasterScheduler
 import org.springframework.beans.factory.getBean
 import org.springframework.context.ApplicationContext
 import org.springframework.context.ApplicationContextAware
@@ -19,7 +20,9 @@ class AppUtil: ApplicationContextAware {
         return context.getBean(clazz)
     }
 
-    fun getBean(str: String): Any {
-        return context.getBean(str)
-    }
+    fun getBean(str: String) = context.getBean(str)
+
+    fun <T> getAllBean(clazz: Class<T>): Array<String> =
+        context.getBeanNamesForType(clazz)
+
 }

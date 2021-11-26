@@ -12,7 +12,7 @@ import java.util.concurrent.ScheduledFuture
 import kotlin.collections.HashMap
 
 @Service
-class Scheduler(
+class Scheduler (
     private val scheduler: TaskScheduler,
     private val appUtil: AppUtil
 ) {
@@ -24,7 +24,10 @@ class Scheduler(
     @EventListener(ContextRefreshedEvent::class)
     fun contextRefreshedEvent() {
         log.info("aabbcc")
-        addTaskToScheduler(1L, "0 0/1 * * * *", appUtil.getBean("TaskOne") as Runnable)
+        appUtil.getAllBean(Runnable::class.java).forEach {
+            println(it)
+        }
+//        addTaskToScheduler(1L, "0 0/1 * * * *", appUtil.getBean("TaskOne") as Runnable)
     }
 
     fun addTaskToScheduler(id: Long, cronStr: String, task:Runnable) {
