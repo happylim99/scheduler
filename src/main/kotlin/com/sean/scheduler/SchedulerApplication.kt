@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
-@EnableAutoConfiguration(exclude = [
-	DataSourceAutoConfiguration::class,
-	DataSourceTransactionManagerAutoConfiguration::class,
-	HibernateJpaAutoConfiguration::class])
+@SpringBootApplication(scanBasePackages= ["com.sean"])
+//@EnableAutoConfiguration(exclude = [
+//	DataSourceAutoConfiguration::class,
+//	DataSourceTransactionManagerAutoConfiguration::class,
+//	HibernateJpaAutoConfiguration::class])
 class SchedulerApplication
 
 fun main(args: Array<String>) {

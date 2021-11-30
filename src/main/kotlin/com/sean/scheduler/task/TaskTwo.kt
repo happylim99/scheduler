@@ -1,15 +1,14 @@
 package com.sean.scheduler.task
 
-import com.sean.scheduler.service.MasterScheduler
-import org.springframework.beans.factory.annotation.Qualifier
+import com.sean.scheduler.service.impl.MasterSchedulerSrvImpl
 import org.springframework.stereotype.Component
-import org.springframework.stereotype.Service
 import java.util.*
 
-@Component("TaskTwo")
-class TaskTwo: MasterScheduler(), Runnable {
+@Component
+class TaskTwo: MasterTask() {
+
     override fun run() {
-        println("${Date()} runnable here")
+        println("${Date()} TaskTwo runnable here")
     }
 
 }

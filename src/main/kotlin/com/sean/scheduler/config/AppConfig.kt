@@ -12,7 +12,7 @@ class AppConfig {
     fun taskScheduler(): TaskScheduler {
         val scheduler = ThreadPoolTaskScheduler().apply {
             setThreadNamePrefix("Scheduler")
-            poolSize = 10
+            poolSize = 5
             isRemoveOnCancelPolicy = true
         }
         scheduler.initialize()

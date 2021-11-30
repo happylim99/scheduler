@@ -1,6 +1,5 @@
 package com.sean.scheduler.util
 
-import com.sean.scheduler.service.MasterScheduler
 import org.springframework.beans.factory.getBean
 import org.springframework.context.ApplicationContext
 import org.springframework.context.ApplicationContextAware
